@@ -26,4 +26,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function tipo(){
+        switch ($this->tipo) {
+            case 1:
+               return 'Produtor';
+                break;
+            case 2:
+                return "Estrativista";
+                break;
+           default:
+             return 'Usuário';
+                break;
+        }
+    }
 }

@@ -17,4 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+$this->group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
+    $this->get('/', 'HomeController@index')->name('admin.home');
+    $this->get('/add/usuario', 'HomeController@adduser')->name('admin.adduser');
+    $this->post('/add/usuario', 'HomeController@adduserpost')->name('admin.adduser.post');
+});

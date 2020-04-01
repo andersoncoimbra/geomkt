@@ -140,8 +140,20 @@ return [
         ],
         [
             'text'        => 'Registros',
-            'url'         => 'admin/pages',
+            'url'         => 'admin/registros',
             'icon'        => 'far fa-file',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Add Produtor',
+            'url'         => 'admin/add/usuario',
+            'icon'        => 'fa fa-fw fa-plus',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Add Comprador',
+            'url'         => 'admin/add/comprador',
+            'icon'        => 'fa fa-fw fa-plus',
             'label_color' => 'success',
         ],
         ['header' => 'Configurações'],
