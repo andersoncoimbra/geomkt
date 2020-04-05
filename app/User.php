@@ -35,6 +35,9 @@ class User extends Authenticatable
             case 2:
                 return "Estrativista";
                 break;
+            case 3:
+                return "Comprador";
+                break;
            default:
              return 'Usuário';
                 break;

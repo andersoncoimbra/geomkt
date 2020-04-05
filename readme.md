@@ -11,3 +11,4 @@
 - **Ajuste para haspedagem no dominio geomkt.ml**
 
 - **Commit de atualização - Configuração do sistema de acesso e registro de novos produtores 01/04/2020**
+- **Commit de atualização - Configuração de registro de novos Compradores 03/04/2020**

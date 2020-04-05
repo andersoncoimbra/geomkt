@@ -23,4 +23,6 @@ $this->group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     $this->get('/', 'HomeController@index')->name('admin.home');
     $this->get('/add/usuario', 'HomeController@adduser')->name('admin.adduser');
     $this->post('/add/usuario', 'HomeController@adduserpost')->name('admin.adduser.post');
+    $this->get('/add/comprador', 'HomeController@addcomprador')->name('admin.addcomprador');
+    $this->post('/add/comprador', 'HomeController@addcompradorpost')->name('admin.addcomprador.post');
 });

@@ -3,18 +3,22 @@
 @section('title')
 
 @section('content_header')
-    <h1>Adicionar Produtor</h1>
+    <h1>Adicionar {{$dados['nomePagina']}}</h1>
 @stop
 
 @section('content')
 <div class="col-md-6">
         <div class="box box-primary ">
             <div class="box-header with-border">
-              <h3 class="box-title">Formulario de cadastro de produtor</h3>
+              <h3 class="box-title">Formulario de cadastro de {{$dados['nomePagina']}}</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+            @if(!$dados['tipocomprador'])
             <form role="form" method="post" action="{{route('admin.adduser.post')}}" >
+            @else
+            <form role="form" method="post" action="{{route('admin.addcomprador.post')}}" >
+            @endif
                 {{ csrf_field() }}
               <div class="box-body">
               <div class="form-group">
@@ -45,6 +49,7 @@
                   <label>Telefone Celular</label>
                   <input type="text" name="fone" class="form-control">
               </div>
+              @if(!$dados['tipocomprador'])
               <div class="form-group">
                   <label>Tipo de cooperado</label>
                   <select class="form-control" name="tipo">
@@ -53,6 +58,7 @@
                         <option value="2">Produtor</option>
                   </select>
                 </div>
+                @endif
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email </label>
                   <input type="email"  name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
@@ -73,7 +79,7 @@
 <div class="col-md-6">
         <div class="box box-primary ">
             <div class="box-header with-border">
-              <h3 class="box-title">Lista de Produtores</h3>
+              <h3 class="box-title">Lista de {{$dados['nomePaginapl']}}</h3>
             </div>
             <!-- /.box-header -->
             <!-- List start -->
@@ -89,7 +95,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                            @foreach($prod as $pro) 
+                            @foreach($user as $pro) 
                             <tr>
                             <td>{{$pro->id}}</td>
                             <td>{{$pro->name}}</td>
