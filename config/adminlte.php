@@ -156,6 +156,11 @@ return [
             'icon'        => 'fa fa-fw fa-plus',
             'label_color' => 'success',
         ],
+        [   'text'        => 'Add Cooperativa',
+            'url'         => 'admin/mapa',
+            'icon'        => 'fa fa-fw fa-map-marker',
+            'label_color' => 'success',
+        ],
         ['header' => 'Configurações'],
         [
             'text' => 'Perfil',

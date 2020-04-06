@@ -38,7 +38,7 @@ class HomeController extends Controller
         $user->email = $request->email;
         $user->password =  Hash::make($request->password);
         $user->save();
-        
+
         $prod = User::whereIn('tipo', [1,2])->get();
         $dados = array(
             //tipo comprado 
@@ -81,5 +81,9 @@ class HomeController extends Controller
             'nomePaginapl'=> 'Compradores'
         );
         return view('admin.adduser', ['user' => $comprador, 'dados'=> $dados]);
+    }
+
+    public function map(){
+        return view('admin.map');
     }
 }

@@ -21,6 +21,11 @@ Auth::routes();
 
 $this->group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
     $this->get('/', 'HomeController@index')->name('admin.home');
+
+    //tela de exibição de associações
+    $this->get('/mapa', 'HomeController@map')->name('admin.mapa');
+    
+    //Tela de cadastro
     $this->get('/add/usuario', 'HomeController@adduser')->name('admin.adduser');
     $this->post('/add/usuario', 'HomeController@adduserpost')->name('admin.adduser.post');
     $this->get('/add/comprador', 'HomeController@addcomprador')->name('admin.addcomprador');
