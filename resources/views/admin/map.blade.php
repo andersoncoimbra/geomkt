@@ -16,7 +16,7 @@
 
             var centerlizedmap = new google.maps.LatLng(-1.4354115,-48.4641122);
             var mapOptions = {
-              zoom: 13.9,
+              zoom: 6,
               scrollwheel: false,
               center: centerlizedmap
             };
@@ -41,6 +41,6 @@
       
 </script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMm9KkMpHy0DnuPq_my6_qLuY1rDAY9o0&callback=initialize_map">
+    src="https://maps.googleapis.com/maps/api/js?callback=initialize_map">
     </script>
 @stop
