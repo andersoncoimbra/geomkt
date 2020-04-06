@@ -8,9 +8,8 @@
 
 @section('content')
 <div class="col-md-8">
-<div id="google-map" ></div>
+<div id="google-map" style="height: 550px;"></div>
 </div>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAEZe1dNPPdc_lwtJGgs1Cq4fdzmOLuQTY&v=3"></script>
 <script type="text/javascript">
 
   function initialize_map() {
@@ -36,11 +35,12 @@
             infowindow.open(map,marker);          
 
 
-            google.maps.event.addListener(marker, 'click', function() {
-              infowindow.open(map,marker);
-            });
+           
 
             }            
-      google.maps.event.addDomListener(window, 'load', initialize_map);
+      
 </script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMm9KkMpHy0DnuPq_my6_qLuY1rDAY9o0&callback=initialize_map">
+    </script>
 @stop
