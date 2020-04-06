@@ -24,7 +24,9 @@ $this->group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
 
     //tela de exibição de associações
     $this->get('/mapa', 'HomeController@map')->name('admin.mapa');
-    
+    $this->post('/mapa', 'HomeController@mapapost')->name('admin.mapa.post');
+
+
     //Tela de cadastro
     $this->get('/add/usuario', 'HomeController@adduser')->name('admin.adduser');
     $this->post('/add/usuario', 'HomeController@adduserpost')->name('admin.adduser.post');

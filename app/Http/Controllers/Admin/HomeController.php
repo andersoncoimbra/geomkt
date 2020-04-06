@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Models\Cooperativa;
 
 class HomeController extends Controller
 {
@@ -84,6 +85,18 @@ class HomeController extends Controller
     }
 
     public function map(){
-        return view('admin.map');
+        $cooperativas = Cooperativa::all();
+        return view('admin.map', ['cooperativas'=> $cooperativas]);
+    }
+
+    public function mapapost(Request $request){
+        //dd($request);
+        $coop = new Cooperativa();
+        $coop->nome = $request->nomecooperativa;
+        $coop->descricao = $request->desccooperativa;
+        $coop->latitude = $request->latitude;
+        $coop->longitude = $request->longitude;
+        $coop->save();
+        return redirect()->route('admin.mapa');
     }
 }
